@@ -1,0 +1,214 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle, rgba(18, 18, 58, 1) 0%, rgba(3, 3, 35, 1) 100%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+/* Sky Animation */
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: -10000px 5000px; }
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+  animation: moveStars 100s linear infinite;
+  z-index: -1;
+}
+
+/* Moon Styles */
+body::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 150px;
+  height: 150px;
+  background: url('https://www.publicdomainpictures.net/pictures/320000/nahled/full-moon-1573581018yQh.jpg') no-repeat center center;
+  background-size: cover;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* Container Styles */
+.expense-tracker-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Header Styles */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 2rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Main Content Styles */
+.expense-tracker {
+  flex: 1;
+}
+
+.expense-tracker h2 {
+  margin-top: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Input Container Styles */
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Input Styles */
+.input-container input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  width: calc(100% - 22px);
+  transition: all 0.3s;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.input-container input:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 8px rgba(37, 117, 252, 0.5);
+  outline: none;
+}
+
+/* Button Styles */
+.input-container button {
+  padding: 10px;
+  background: linear-gradient(145deg, #3e8ef7, #4f93f9);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 5px 15px rgba(37, 117, 252, 0.4);
+}
+
+.input-container button:hover {
+  background: linear-gradient(145deg, #4f93f9, #3e8ef7);
+  box-shadow: 0 5px 20px rgba(37, 117, 252, 0.6);
+}
+
+/* Expense List Styles */
+.expense-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+/* Expense Item Styles */
+.expense-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.expense-list li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.02);
+}
+
+.expense-list li:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Delete Button Styles */
+.expense-list button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.expense-list button:hover {
+  background-color: #e53935;
+}
+
+/* Footer Styles */
+.footer {
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 20px;
+}
+
+.footer p {
+  margin: 0;
+  color: #fff;
+  font-size: 0.875rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
